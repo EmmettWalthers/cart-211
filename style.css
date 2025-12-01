@@ -304,10 +304,83 @@ button:hover {
 	margin-top: 10px;
 }
 
-@media (max-width: 500px) { /* use 479px when done testing */
-  
+.terms-accepted .terms-reveal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 50px;
+  z-index: -1;
+  opacity: 0.15;
+  line-height: 1.8;
+  color: rgb(0, 255, 0);
+  text-shadow: 0 0 8px rgb(0,255,0);
+  font-size: 1.1rem;
+}
+
+.terms-accepted .terms-reveal-inner {
+  max-width: 900px;
+  margin: auto;
+  text-align: justify;
+}
+
+.terms-accepted main {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
+.dramatic-card {
+  animation: slidein 0.8s ease-out forwards;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+@keyframes slidein {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.subtext {
+  color: rgb(0,255,0);
+  text-shadow: 0 0 6px rgb(0,255,0);
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 479px) {
+
+  .gif {
+    width: 300px;
+    top: 45%;
+  }
+
   h2 {
     font-size: 2em;
+    margin: 20px 20px;
+  }
+
+  .page-button {
+    bottom: 20px;
+    transform: translateX(-50%);
+  }
+
+  .page-button a {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .tooltip::after {
+    white-space: normal;
+    width: 180px;
     text-align: center;
   }
 
@@ -336,59 +409,4 @@ button:hover {
     padding: 0;
     text-align: center;
   }
-}
-
-/* Make background text centered, readable, and dramatic */
-.terms-accepted .terms-reveal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  padding: 50px;
-  z-index: -1;
-  opacity: 0.15;
-  line-height: 1.8;
-  color: rgb(0, 255, 0);
-  text-shadow: 0 0 8px rgb(0,255,0);
-  font-size: 1.1rem;
-}
-
-.terms-accepted .terms-reveal-inner {
-  max-width: 900px;
-  margin: auto;
-  text-align: justify;
-}
-
-/* Center the foreground container more dramatically */
-.terms-accepted main {
-  position: relative;
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-  padding-top: 10vh;
-}
-
-.dramatic-card {
-  animation: slidein 0.8s ease-out forwards;
-  transform: translateY(30px);
-  opacity: 0;
-}
-
-/* Dramatic entrance */
-@keyframes slidein {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Optional: glowing subtitle */
-.subtext {
-  color: rgb(0,255,0);
-  text-shadow: 0 0 6px rgb(0,255,0);
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-  line-height: 1.4;
 }
